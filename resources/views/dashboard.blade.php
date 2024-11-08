@@ -2,8 +2,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
 
-
-    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         <x-app.navbar />
         <div class="container-fluid py-4 px-5">
             <div class="row">
@@ -30,21 +29,24 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    @foreach ($users as $user)
+                <tbody>
+                    {{-- @foreach ($items as $item)
                     <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{  }}</td>
-                        <td>New York</td>
-                        <td>27</td>
-                        <td>2011-01-25</td>
-                        <td>$112,000</td>
+                        <td>{{ $num ++ }}</td>
+                        <td>{{ $items->name }}</td>
+                        <td>{{ $items->loc_found }}</td>
+                        <td>{{ $items->loc_custody }}</td>
+                        <td><img src="{{ $items->image }}" alt="Foto Barang" style="width: 50px;"></td>
+                        <td>{{ $items->description }}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm me-1" onclick="sendItem({{ $item->id }})">Send</button>
+                            <button class="btn btn-info btn-sm me-1" onclick="viewInfo({{ $item->id }})">Info</button>
+                            <button class="btn btn-warning btn-sm me-1" onclick="editItem({{ $item->id }})">Edit</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteItem({{ $item->id }})">Hapus</button>
+                        </td>
                     </tr>
-                    @endforeach
-                </tbody> --}}
-                <tfoot>
-
-                </tfoot>
+                    @endforeach --}}
+                </tbody>
             </table>
 
             <x-app.footer />
@@ -56,20 +58,29 @@
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
     <script>
-        // $(`#example tbody`).html('')
-        // for(let i=0;i<10;i++){
-        //     $(`#example tbody`).append(`
-                // <tr>
-                //         <td>Donna Snider</td>
-                //         <td>Customer Support</td>
-                //         <td>New York</td>
-                //         <td>27</td>
-                //         <td>2011-01-25</td>
-                //         <td>$112,000</td>
-                //     </tr>
-        //     `)
-        // }
-         new DataTable('#example');
+        new DataTable('#example');
+
+        // Fungsi untuk masing-masing tombol action
+        function sendItem(id) {
+            // Tambahkan logika untuk tombol Send
+            alert('Send item with ID: ' + id);
+        }
+
+        function viewInfo(id) {
+            // Tambahkan logika untuk tombol Info
+            alert('View info for item with ID: ' + id);
+        }
+
+        function editItem(id) {
+            // Tambahkan logika untuk tombol Edit
+            alert('Edit item with ID: ' + id);
+        }
+
+        function deleteItem(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
+                // Tambahkan logika untuk tombol Hapus
+                alert('Deleted item with ID: ' + id);
+            }
+        }
     </script>
 </x-app-layout>
-
