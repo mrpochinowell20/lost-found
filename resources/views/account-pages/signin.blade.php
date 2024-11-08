@@ -75,7 +75,7 @@
                                         class="blur mt-12 p-4 text-center border border-white border-radius-md position-absolute fixed-bottom m-4">
                                         <h2 class="mt-3 text-dark font-weight-bold">I hope you find the item quickly !!!</h2>
                                         <h6 class="text-dark text-sm mt-5">Copyright © 2024
-                                            by LALA wkwk Team Four LJ.</h6>
+                                            by LALA wkwkTeam Four LJ.</h6>
                                     </div>
                                 </div>
                             </div>
